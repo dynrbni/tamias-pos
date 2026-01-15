@@ -262,6 +262,21 @@
   will-change: opacity, transform;
 }
 
+/* Slow spin for decorations */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
 /* Glass effect */
 .glass {
   background: rgba(255, 255, 255, 0.8);
