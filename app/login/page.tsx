@@ -36,9 +36,11 @@ export default function LoginPage() {
                             </div>
                             <Input id="password" type="password" required />
                         </div>
-                        <Button type="submit" className="w-full bg-green-600 hover:bg-green-700">
-                            Login
-                        </Button>
+                        <Link href="/dashboard" className="w-full">
+                            <Button type="submit" className="w-full bg-green-600 hover:bg-green-700">
+                                Login
+                            </Button>
+                        </Link>
                         <div className="relative">
                             <div className="absolute inset-0 flex items-center">
                                 <span className="w-full border-t" />

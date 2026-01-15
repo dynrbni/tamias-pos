@@ -14,14 +14,14 @@ export default function RegisterPage() {
                             Masukan informasi anda untuk membuat akun baru
                         </p>
                     </div>
-                     <div className="grid gap-2">
-                            <Label htmlFor="email">Nama Toko</Label>
-                            <Input
-                                id="toko"
-                                placeholder="Warung Madurskuy"
-                                required
-                            />
-                        </div>
+                    <div className="grid gap-2">
+                        <Label htmlFor="email">Nama Toko</Label>
+                        <Input
+                            id="toko"
+                            placeholder="Warung Madurskuy"
+                            required
+                        />
+                    </div>
                     <div className="grid gap-4">
                         <div className="grid grid-cols-2 gap-4">
                             <div className="grid gap-2">
@@ -46,9 +46,11 @@ export default function RegisterPage() {
                             <Label htmlFor="password">Password</Label>
                             <Input id="password" type="password" required />
                         </div>
-                        <Button type="submit" className="w-full bg-green-600 hover:bg-green-700">
-                            Buat Akun
-                        </Button>
+                        <Link href="/dashboard" className="w-full">
+                            <Button type="submit" className="w-full bg-green-600 hover:bg-green-700">
+                                Buat Akun
+                            </Button>
+                        </Link>
                         <div className="relative">
                             <div className="absolute inset-0 flex items-center">
                                 <span className="w-full border-t" />
