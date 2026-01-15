@@ -28,8 +28,8 @@ export function Navbar() {
     return (
         <header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                    ? "glass border-b border-border/50 shadow-sm"
-                    : "bg-transparent"
+                ? "glass border-b border-border/50 shadow-sm"
+                : "bg-transparent"
                 }`}
         >
             <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,11 +59,11 @@ export function Navbar() {
 
                     {/* Desktop CTA */}
                     <div className="hidden md:flex md:items-center md:space-x-4">
-                        <Button variant="ghost" size="sm">
-                            Masuk
+                        <Button variant="ghost" size="sm" asChild>
+                            <Link href="/login">Masuk</Link>
                         </Button>
-                        <Button size="sm" className="gradient-primary hover:opacity-90 transition-opacity">
-                            Mulai Gratis
+                        <Button size="sm" className="gradient-primary hover:opacity-90 transition-opacity" asChild>
+                            <Link href="/register">Mulai Gratis</Link>
                         </Button>
                     </div>
 
@@ -98,11 +98,11 @@ export function Navbar() {
                                     ))}
                                 </nav>
                                 <div className="flex flex-col space-y-3 pt-4 border-t">
-                                    <Button variant="outline" className="w-full">
-                                        Masuk
+                                    <Button variant="outline" className="w-full" asChild>
+                                        <Link href="/login">Masuk</Link>
                                     </Button>
-                                    <Button className="w-full gradient-primary hover:opacity-90 transition-opacity">
-                                        Mulai Gratis
+                                    <Button className="w-full gradient-primary hover:opacity-90 transition-opacity" asChild>
+                                        <Link href="/register">Mulai Gratis</Link>
                                     </Button>
                                 </div>
                             </div>

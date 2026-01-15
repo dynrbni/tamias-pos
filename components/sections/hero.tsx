@@ -85,7 +85,7 @@ export function Hero() {
                             className="px-4 py-1.5 text-sm border border-green-200 bg-green-50 text-green-700"
                         >
                             <Sparkles className="w-3.5 h-3.5 mr-1.5" />
-                            Baru di 2026
+                            Aplikasi Kasir Terbaik di Indonesia
                         </Badge>
                     </div>
 
