@@ -34,9 +34,6 @@ export function Footer() {
                     {/* Brand */}
                     <div className="col-span-2">
                         <Link href="/" className="flex items-center space-x-2">
-                            <div className="flex h-9 w-9 items-center justify-center rounded-lg gradient-primary">
-                                <span className="text-lg font-bold text-white">T</span>
-                            </div>
                             <span className="text-xl font-bold text-foreground">
                                 Tamias<span className="text-green-500">POS</span>
                             </span>
@@ -152,7 +149,7 @@ export function Footer() {
                             © {new Date().getFullYear()} Tamias POS. Semua hak cipta dilindungi.
                         </p>
                         <p className="text-sm text-muted-foreground">
-                            Dibuat dengan ❤️ di Indonesia
+                            PT. Tamias Sukses Indonesia
                         </p>
                     </div>
                 </div>

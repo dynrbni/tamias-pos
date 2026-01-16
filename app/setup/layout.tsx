@@ -18,9 +18,7 @@ export default function SetupLayout({
                     Tamias<span className="text-green-600">POS</span>
                 </span>
             </Link>
-            <div className="w-full max-w-md bg-white rounded-xl shadow-lg p-6 md:p-8">
-                {children}
-            </div>
+            {children}
             <p className="mt-8 text-center text-sm text-muted-foreground">
                 © 2026 Tamias POS. All rights reserved.
             </p>

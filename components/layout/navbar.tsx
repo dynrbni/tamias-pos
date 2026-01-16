@@ -36,9 +36,6 @@ export function Navbar() {
                 <div className="flex h-16 items-center justify-between">
                     {/* Logo */}
                     <Link href="/" className="flex items-center space-x-2">
-                        <div className="flex h-9 w-9 items-center justify-center rounded-lg gradient-primary">
-                            <span className="text-lg font-bold text-white">T</span>
-                        </div>
                         <span className="text-xl font-bold text-foreground">
                             Tamias<span className="text-green-500">POS</span>
                         </span>
@@ -78,9 +75,6 @@ export function Navbar() {
                         <SheetContent side="right" className="w-[300px] sm:w-[400px]">
                             <div className="flex flex-col space-y-6 mt-8">
                                 <Link href="/" className="flex items-center space-x-2">
-                                    <div className="flex h-9 w-9 items-center justify-center rounded-lg gradient-primary">
-                                        <span className="text-lg font-bold text-white">T</span>
-                                    </div>
                                     <span className="text-xl font-bold text-foreground">
                                         Tamias<span className="text-green-500">POS</span>
                                     </span>

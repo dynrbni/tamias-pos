@@ -17,12 +17,7 @@ export function CTA() {
             {/* Content */}
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
                 <div className="max-w-3xl mx-auto text-center">
-                    {/* Badge */}
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm mb-8">
-                        <Sparkles className="w-4 h-4" />
-                        <span>14 hari uji coba gratis</span>
-                    </div>
-
+        
                     {/* Headline */}
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
                         Siap Tingkatkan Efisiensi Bisnis Anda?

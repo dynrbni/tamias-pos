@@ -43,7 +43,7 @@ export default function SubscriptionPage() {
     };
 
     return (
-        <div className="space-y-6">
+        <div className="w-full max-w-4xl bg-white rounded-xl shadow-lg p-6 md:p-8 space-y-6">
             <div className="space-y-2 text-center">
                 <h1 className="text-2xl font-bold tracking-tight">Pilih Paket</h1>
                 <p className="text-sm text-muted-foreground">
@@ -51,7 +51,7 @@ export default function SubscriptionPage() {
                 </p>
             </div>
 
-            <div className="grid gap-4">
+            <div className="grid gap-6 md:grid-cols-2">
                 {plans.map((plan) => (
                     <div
                         key={plan.id}
@@ -102,7 +102,7 @@ export default function SubscriptionPage() {
                 disabled={isLoading || !selectedPlan}
             >
                 {isLoading && <Loader2 className="mr-2 h-5 w-5 animate-spin" />}
-                {selectedPlan ? "Lanjutkan ke Dashboard" : "Pilih Paket Dulu"}
+                {selectedPlan ? "Lanjutkan ke Dashboard" : "Pilih Paket Berlangganan"}
             </Button>
         </div>
     );

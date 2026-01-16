@@ -207,82 +207,16 @@ export function Hero() {
                             </div>
 
                             {/* Dashboard content */}
-                            <div className="p-6 lg:p-8 bg-gradient-to-br from-gray-50 to-white">
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
-                                    {/* Stats cards */}
-                                    {[
-                                        {
-                                            label: "Penjualan Hari Ini",
-                                            value: "Rp 12.5 Juta",
-                                            change: "+12%",
-                                            icon: CreditCard,
-                                        },
-                                        {
-                                            label: "Transaksi",
-                                            value: "156",
-                                            change: "+8%",
-                                            icon: Receipt,
-                                        },
-                                        {
-                                            label: "Produk Terjual",
-                                            value: "432 Items",
-                                            change: "+15%",
-                                            icon: Package,
-                                        },
-                                    ].map((stat, i) => (
-                                        <div
-                                            key={i}
-                                            className="bg-white rounded-lg p-4 lg:p-5 border shadow-sm hover:shadow-md transition-shadow"
-                                        >
-                                            <div className="flex items-center justify-between mb-2">
-                                                <p className="text-sm text-muted-foreground">
-                                                    {stat.label}
-                                                </p>
-                                                <stat.icon className="w-4 h-4 text-green-500" />
-                                            </div>
-                                            <p className="text-2xl font-bold">{stat.value}</p>
-                                            <div className="flex items-center gap-1 mt-1">
-                                                <span className="text-sm text-green-600 font-medium">
-                                                    {stat.change}
-                                                </span>
-                                                <span className="text-sm text-muted-foreground">
-                                                    dari kemarin
-                                                </span>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-
-                                {/* Chart */}
-                                <div className="mt-6 bg-white rounded-lg p-4 lg:p-6 border shadow-sm">
-                                    <div className="flex justify-between items-center mb-4">
-                                        <h3 className="font-semibold flex items-center gap-2">
-                                            <BarChart3 className="w-4 h-4 text-green-500" />
-                                            Grafik Penjualan
-                                        </h3>
-                                        <span className="text-sm text-muted-foreground px-2 py-1 bg-gray-100 rounded">
-                                            7 hari terakhir
-                                        </span>
-                                    </div>
-                                    <div className="h-32 lg:h-40 flex items-end gap-2 lg:gap-3">
-                                        {[40, 65, 45, 80, 55, 70, 90].map((height, i) => (
-                                            <div
-                                                key={i}
-                                                className="flex-1 rounded-t gradient-primary"
-                                                style={{ height: `${height}%` }}
-                                            />
-                                        ))}
-                                    </div>
-                                    <div className="flex justify-between mt-2 text-xs text-muted-foreground">
-                                        {["Sen", "Sel", "Rab", "Kam", "Jum", "Sab", "Min"].map(
-                                            (day) => (
-                                                <span key={day} className="font-medium">
-                                                    {day}
-                                                </span>
-                                            )
-                                        )}
-                                    </div>
-                                </div>
+                            <div className="relative bg-gray-50">
+                                <img
+                                    src="/images/dashboard-mockup.png"
+                                    alt="Tamias POS Dashboard Preview"
+                                    className="w-full h-auto opacity-90 hover:opacity-100 transition-opacity duration-700"
+                                    width={1440}
+                                    height={900}
+                                />
+                                {/* Overlay gradient for better blending if needed */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent pointer-events-none" />
                             </div>
                         </div>
                     </div>

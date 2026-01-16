@@ -31,9 +31,6 @@ export function Sidebar({ className }: SidebarProps) {
                 <div className="px-3 py-2">
                     {/* Logo */}
                     <Link href="/dashboard" className="flex items-center px-4 mb-6">
-                        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-green-600 mr-2">
-                            <span className="text-lg font-bold text-white">T</span>
-                        </div>
                         <span className="text-xl font-bold text-foreground">
                             Tamias<span className="text-green-600">POS</span>
                         </span>
@@ -137,7 +134,7 @@ export function Sidebar({ className }: SidebarProps) {
                 </div>
             </div>
 
-            <div className="mt-auto p-4 border-t">
+            <div className="mt-27 p-4 border-t">
                 <Button variant="ghost" className="w-full justify-start text-red-500 hover:text-red-600 hover:bg-red-50" asChild>
                     <Link href="/">
                         <LogOut className="mr-2 h-4 w-4" />

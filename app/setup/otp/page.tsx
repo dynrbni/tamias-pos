@@ -36,7 +36,7 @@ export default function OTPPage() {
     };
 
     return (
-        <div className="space-y-6 text-center">
+        <div className="w-full max-w-md bg-white rounded-xl shadow-lg p-6 md:p-8 space-y-6 text-center">
             <div className="space-y-2">
                 <h1 className="text-2xl font-bold tracking-tight">Verifikasi Akun</h1>
                 <p className="text-sm text-muted-foreground">
