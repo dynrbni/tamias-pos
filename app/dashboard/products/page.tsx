@@ -8,20 +8,20 @@ import { Input } from "@/components/ui/input";
 import { Plus, Search, Filter, MoreHorizontal, Pencil, Trash2 } from "lucide-react";
 import {
     DropdownMenu,
-    DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
+    DropdownMenuContent,
 } from "@/components/ui/dropdown-menu";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 const products = [
-    { id: "PRD001", name: "Indomie Goreng", category: "Makanan", price: "Rp 3.500", stock: 150, status: "Tersedia" },
-    { id: "PRD002", name: "Aqua 600ml", category: "Minuman", price: "Rp 4.000", stock: 200, status: "Tersedia" },
-    { id: "PRD003", name: "Gudang Garam Surya 16", category: "Rokok", price: "Rp 28.000", stock: 45, status: "Tersedia" },
-    { id: "PRD004", name: "Kopi Kapal Api", category: "Minuman", price: "Rp 2.500", stock: 80, status: "Tersedia" },
-    { id: "PRD005", name: "Gula Pasir 1kg", category: "Bahan Pokok", price: "Rp 15.000", stock: 8, status: "Stok Menipis" },
-    { id: "PRD006", name: "Minyak Goreng 2L", category: "Bahan Pokok", price: "Rp 32.000", stock: 3, status: "Stok Menipis" },
-    { id: "PRD007", name: "Teh Pucuk Harum", category: "Minuman", price: "Rp 4.500", stock: 120, status: "Tersedia" },
-    { id: "PRD008", name: "Sabun Lifebuoy", category: "Perawatan", price: "Rp 5.000", stock: 0, status: "Habis" },
+    { id: "PRD001", name: "Indomie Goreng", image: "https://images.unsplash.com/photo-1613243555988-441166d4d6fd?w=100&h=100&fit=crop", category: "Makanan", price: "Rp 3.500", stock: 150, status: "Tersedia" },
+    { id: "PRD002", name: "Aqua 600ml", image: "https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?w=100&h=100&fit=crop", category: "Minuman", price: "Rp 4.000", stock: 200, status: "Tersedia" },
+    { id: "PRD003", name: "Kopi Kapal Api", image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=100&h=100&fit=crop", category: "Minuman", price: "Rp 2.500", stock: 80, status: "Tersedia" },
+    { id: "PRD004", name: "Gula Pasir 1kg", image: "https://images.unsplash.com/photo-1581441363689-1f3c8c414635?w=100&h=100&fit=crop", category: "Bahan Pokok", price: "Rp 15.000", stock: 8, status: "Stok Menipis" },
+    { id: "PRD005", name: "Minyak Goreng 2L", image: "https://images.unsplash.com/photo-1474631245212-32dc3c8e2c81?w=100&h=100&fit=crop", category: "Bahan Pokok", price: "Rp 32.000", stock: 3, status: "Stok Menipis" },
+    { id: "PRD006", name: "Teh Pucuk Harum", image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=100&h=100&fit=crop", category: "Minuman", price: "Rp 4.500", stock: 120, status: "Tersedia" },
+    { id: "PRD007", name: "Sabun Lifebuoy", image: "https://images.unsplash.com/photo-1600857062241-98e5dba9959e?w=100&h=100&fit=crop", category: "Perawatan", price: "Rp 5.000", stock: 0, status: "Habis" },
 ];
 
 export default function ProductsPage() {
@@ -55,8 +55,7 @@ export default function ProductsPage() {
                     <Table>
                         <TableHeader>
                             <TableRow>
-                                <TableHead>ID</TableHead>
-                                <TableHead>Nama Produk</TableHead>
+                                <TableHead>Produk</TableHead>
                                 <TableHead>Kategori</TableHead>
                                 <TableHead className="text-right">Harga</TableHead>
                                 <TableHead className="text-right">Stok</TableHead>
@@ -67,8 +66,18 @@ export default function ProductsPage() {
                         <TableBody>
                             {products.map((p) => (
                                 <TableRow key={p.id}>
-                                    <TableCell className="font-medium">{p.id}</TableCell>
-                                    <TableCell className="font-medium">{p.name}</TableCell>
+                                    <TableCell>
+                                        <div className="flex items-center gap-3">
+                                            <Avatar className="h-10 w-10 rounded-lg border bg-gray-50">
+                                                <img src={p.image} alt={p.name} className="h-full w-full object-cover" />
+                                                <AvatarFallback className="rounded-lg">IMG</AvatarFallback>
+                                            </Avatar>
+                                            <div className="flex flex-col">
+                                                <span className="font-medium">{p.name}</span>
+                                                <span className="text-xs text-muted-foreground">{p.id}</span>
+                                            </div>
+                                        </div>
+                                    </TableCell>
                                     <TableCell className="text-muted-foreground">{p.category}</TableCell>
                                     <TableCell className="text-right">{p.price}</TableCell>
                                     <TableCell className="text-right">{p.stock}</TableCell>
