@@ -137,11 +137,13 @@ export interface Employee {
     id: string;
     store_id: string;
     user_id: string;
+    employee_id: string; // 10-digit unique ID for login
     name: string;
     email: string;
     phone: string;
     role: string;
     salary: number;
+    pin: string; // Password/PIN for login
     is_active: boolean;
     joined_at: string;
     created_at: string;
@@ -276,13 +278,14 @@ export async function getChartData(storeId: string, days = 7): Promise<ChartData
     for (let i = 0; i < days; i++) {
         const d = new Date(startDate);
         d.setDate(d.getDate() + i);
-        const key = d.toISOString().split('T')[0];
+        const key = d.toLocaleDateString('en-CA'); // YYYY-MM-DD in local time
         grouped[key] = { total: 0, count: 0 };
     }
 
     // Aggregate transactions
     transactions?.forEach(tx => {
-        const key = new Date(tx.created_at).toISOString().split('T')[0];
+        const d = new Date(tx.created_at);
+        const key = d.toLocaleDateString('en-CA');
         if (grouped[key]) {
             grouped[key].total += tx.total || 0;
             grouped[key].count += 1;

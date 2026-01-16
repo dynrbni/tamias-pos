@@ -27,7 +27,7 @@ interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> { }
 export function Sidebar({ className }: SidebarProps) {
     const pathname = usePathname();
     const [storeName, setStoreName] = useState<string>("Memuat...");
-    const [storeAddress, setStoreAddress] = useState<string>("");
+    const [displayId, setDisplayId] = useState<string>("");
 
     useEffect(() => {
         loadStore();
@@ -49,13 +49,13 @@ export function Sidebar({ className }: SidebarProps) {
                 // Get store details
                 const { data: store } = await supabase
                     .from("stores")
-                    .select("name, address")
+                    .select("name, display_id")
                     .eq("id", profile.store_id)
                     .single();
 
                 if (store) {
                     setStoreName(store.name);
-                    setStoreAddress(store.address || "");
+                    setDisplayId(store.display_id || "-");
                 }
             } else {
                 setStoreName("Setup Toko");
@@ -77,7 +77,7 @@ export function Sidebar({ className }: SidebarProps) {
                     {/* Store Header */}
                     <Link href="/dashboard" className="flex items-center px-4 mb-6">
                         <span className="text-xl font-bold text-foreground">
-                            Tamias<span className="text-green-600">POS</span>
+                            Tamias<span className="text-green-600">POS</span> Panel
                         </span>
                     </Link>
                     <div className="px-2 mb-6">
@@ -87,8 +87,8 @@ export function Sidebar({ className }: SidebarProps) {
                             </div>
                             <div className="flex-1 min-w-0">
                                 <p className="font-semibold text-sm truncate">{storeName}</p>
-                                <p className="text-xs text-muted-foreground truncate">
-                                    {storeAddress || "Dashboard Toko"}
+                                <p className="text-xs text-muted-foreground truncate font-mono">
+                                    ID: {displayId || "Loading..."}
                                 </p>
                             </div>
                         </div>
