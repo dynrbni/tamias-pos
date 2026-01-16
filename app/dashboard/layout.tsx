@@ -1,22 +1,88 @@
-import { Metadata } from "next";
+"use client";
+
+import { useEffect, useState, useRef } from "react";
+import { useRouter } from "next/navigation";
 import { Sidebar } from "@/components/dashboard/sidebar";
 import { UserNav } from "@/components/dashboard/user-nav";
-import { MainNav } from "@/components/dashboard/main-nav";
 import { Search } from "@/components/dashboard/search";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Menu, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-export const metadata: Metadata = {
-    title: "Dashboard - Tamias POS",
-    description: "Dashboard overview and analytics",
-};
+import { supabase } from "@/lib/supabase";
 
 export default function DashboardLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
+    const router = useRouter();
+    const [isLoading, setIsLoading] = useState(true);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const isMounted = useRef(true);
+
+    useEffect(() => {
+        isMounted.current = true;
+
+        const checkAuth = async () => {
+            try {
+                const { data: { session }, error } = await supabase.auth.getSession();
+
+                if (!isMounted.current) return;
+
+                if (error || !session) {
+                    router.replace("/login");
+                    return;
+                }
+
+                setIsAuthenticated(true);
+            } catch (err: any) {
+                // Ignore abort errors
+                if (err.name === 'AbortError') return;
+                if (!isMounted.current) return;
+
+                console.error("Auth check error:", err);
+                router.replace("/login");
+            } finally {
+                if (isMounted.current) {
+                    setIsLoading(false);
+                }
+            }
+        };
+
+        checkAuth();
+
+        // Listen for auth changes
+        const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+            if (!isMounted.current) return;
+
+            if (event === "SIGNED_OUT" || !session) {
+                router.replace("/login");
+            }
+        });
+
+        return () => {
+            isMounted.current = false;
+            subscription.unsubscribe();
+        };
+    }, [router]);
+
+    // Show loading while checking auth
+    if (isLoading) {
+        return (
+            <div className="min-h-screen flex items-center justify-center bg-gray-50">
+                <div className="text-center space-y-4">
+                    <Loader2 className="h-12 w-12 animate-spin text-green-600 mx-auto" />
+                    <p className="text-muted-foreground">Memuat...</p>
+                </div>
+            </div>
+        );
+    }
+
+    // Not authenticated
+    if (!isAuthenticated) {
+        return null;
+    }
+
     return (
         <div className="flex min-h-screen bg-gray-50/50">
             {/* Sidebar - Desktop */}
@@ -42,7 +108,6 @@ export default function DashboardLayout({
                         </Sheet>
                     </div>
 
-                    {/* In Sidebar layout, TeamSwitcher is inside Sidebar now. Header has Breadcrumb or Search/UserNav */}
                     <div className="flex items-center gap-4 ml-auto">
                         {/* Breadcrumbs could go here if needed later */}
                     </div>
