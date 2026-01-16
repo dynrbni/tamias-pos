@@ -65,11 +65,9 @@ export default function DashboardPage() {
                     <p className="text-muted-foreground">Overview penjualan hari ini, {new Date().toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}.</p>
                 </div>
                 <div className="flex items-center gap-2">
-                    <Button className="bg-green-600 hover:bg-green-700" asChild>
-                        <Link href="/dashboard/transactions/new">
-                            <Plus className="mr-2 h-4 w-4" />
-                            Transaksi Baru
-                        </Link>
+                    <Button className="bg-green-600 hover:bg-green-700">
+                        <Receipt className="mr-2 h-4 w-4" />
+                        Download Laporan
                     </Button>
                 </div>
             </div>
