@@ -40,8 +40,8 @@ export function Sidebar({ className }: SidebarProps) {
                     </Link>
 
                     {/* Home Section */}
-                    <div className="px-3 mb-2">
-                        <h2 className="mb-2 px-4 text-xs font-semibold tracking-tight text-muted-foreground">
+                    <div className="px-2 mb-2">
+                        <h2 className="mb-2 px-2 text-xs font-semibold tracking-tight text-muted-foreground">
                             Home
                         </h2>
                         <div className="space-y-1">
@@ -66,7 +66,7 @@ export function Sidebar({ className }: SidebarProps) {
                             <Button variant={pathname?.startsWith("/dashboard/customers") ? "secondary" : "ghost"} className="w-full justify-start" asChild>
                                 <Link href="/dashboard/customers">
                                     <Users className="mr-2 h-4 w-4" />
-                                    Pelanggan
+                                    Member Toko
                                 </Link>
                             </Button>
                             <Button variant={pathname?.startsWith("/dashboard/promos") ? "secondary" : "ghost"} className="w-full justify-start" asChild>
@@ -79,8 +79,8 @@ export function Sidebar({ className }: SidebarProps) {
                     </div>
 
                     {/* Karyawan Section */}
-                    <div className="px-3 mb-2 mt-4">
-                        <h2 className="mb-2 px-4 text-xs font-semibold tracking-tight text-muted-foreground">
+                    <div className="px-2 mb-2 mt-4">
+                        <h2 className="mb-2 px-2 text-xs font-semibold tracking-tight text-muted-foreground">
                             Karyawan
                         </h2>
                         <div className="space-y-1">
@@ -100,8 +100,8 @@ export function Sidebar({ className }: SidebarProps) {
                     </div>
 
                     {/* Laporan Section */}
-                    <div className="px-3 mb-2 mt-4">
-                        <h2 className="mb-2 px-4 text-xs font-semibold tracking-tight text-muted-foreground">
+                    <div className="px-2 mb-2 mt-4">
+                        <h2 className="mb-2 px-2 text-xs font-semibold tracking-tight text-muted-foreground">
                             Laporan
                         </h2>
                         <div className="space-y-1">
@@ -121,8 +121,8 @@ export function Sidebar({ className }: SidebarProps) {
                     </div>
 
                     {/* Bantuan Section */}
-                    <div className="px-3 mb-2 mt-4">
-                        <h2 className="mb-2 px-4 text-xs font-semibold tracking-tight text-muted-foreground">
+                    <div className="px-2 mb-2 mt-4">
+                        <h2 className="mb-2 px-2 text-xs font-semibold tracking-tight text-muted-foreground">
                             Lainnya
                         </h2>
                         <div className="space-y-1">

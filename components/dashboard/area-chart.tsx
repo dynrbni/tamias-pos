@@ -3,13 +3,13 @@
 import { Area, AreaChart, ResponsiveContainer, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts"
 
 const data = [
-    { name: "Jan", total: Math.floor(Math.random() * 5000) + 1000 },
-    { name: "Feb", total: Math.floor(Math.random() * 5000) + 1000 },
-    { name: "Mar", total: Math.floor(Math.random() * 5000) + 1000 },
-    { name: "Apr", total: Math.floor(Math.random() * 5000) + 1000 },
-    { name: "May", total: Math.floor(Math.random() * 5000) + 1000 },
-    { name: "Jun", total: Math.floor(Math.random() * 5000) + 1000 },
-    { name: "Jul", total: Math.floor(Math.random() * 5000) + 1000 },
+    { name: "Jan", total: 2400 },
+    { name: "Feb", total: 1398 },
+    { name: "Mar", total: 3200 },
+    { name: "Apr", total: 2780 },
+    { name: "May", total: 1890 },
+    { name: "Jun", total: 2390 },
+    { name: "Jul", total: 3490 },
 ]
 
 export function AreaChartGradient() {

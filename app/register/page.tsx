@@ -46,7 +46,7 @@ export default function RegisterPage() {
                             <Label htmlFor="password">Password</Label>
                             <Input id="password" type="password" required />
                         </div>
-                        <Link href="/dashboard" className="w-full">
+                        <Link href="/setup/otp" className="w-full">
                             <Button type="submit" className="w-full bg-green-600 hover:bg-green-700">
                                 Buat Akun
                             </Button>
